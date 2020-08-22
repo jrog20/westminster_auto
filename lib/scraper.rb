@@ -1,11 +1,11 @@
-require 'nokogiri'
-require 'open-uri'
-require 'pry'
+# require 'nokogiri'
+# require 'open-uri'
+# require 'pry'
 
 # Avoid scraping data more than once per web page - 
 # utilize objects you have already created. It will speed up the program.
 
-class Scraper
+class WestminsterAuto::Scraper
 
   def get_page
     Nokogiri::HTML(open("http://www.westminsterautovt.com/inventory/"))
@@ -32,5 +32,5 @@ class Scraper
     #inventory_details = 
 
   end
-
+  
 end
