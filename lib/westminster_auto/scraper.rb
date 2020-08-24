@@ -27,7 +27,9 @@ class WestminsterAuto::Scraper
       items << item
       items << item.text.strip
     end
+  end
 
+end
         # output: 
 #     [["Automatic"],
 #  ["FWD"],
@@ -104,13 +106,13 @@ class WestminsterAuto::Scraper
 #  "81407"]
 
 
-  end
+  
 
   # Drive
   # Fuel
   # Engine
 
-end
+
 
 ############################
 
