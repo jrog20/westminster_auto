@@ -13,7 +13,6 @@ Class = CLI
   - Ordered list using index
 - user enters a vehicle number and the additional information on that vehicle is provided
   - Body
-  - Transmission
   - Drive
   - Fuel
   - Exterior Color
