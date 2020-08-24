@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/westminster_auto'
+require './westminster_auto/lib/westminster_auto'
 
 WestminsterAuto::CLI.new.call
