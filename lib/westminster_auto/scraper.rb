@@ -20,12 +20,19 @@ class WestminsterAuto::Scraper
     self.get_page.css(".price-form-label").children.first.text
   end
 
+  # def make_vehicles
+  #   # Need to make this last method for Scraper class
+  # end
+
   def inventory_details
     
     get_page.css(".value.h5").children.collect do |item|
       items = []
       items << item
       items << item.text.strip
+      binding.pry
+      #Need to work on scraping data once per car
+      #Nokogiri::HTML(open("http://www.westminsterautovt.com/inventory/")).css(".meta-middle-unit.font-exists.fuel")
     end
   end
 
