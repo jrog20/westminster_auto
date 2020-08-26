@@ -4,6 +4,7 @@ class WestminsterAuto::CLI
     # Need to create this method in Scraper class
     #WestminsterAuto::Scraper.new.make_vehicles
     puts "Welcome to the Westminster Auto available vehicle list"
+    binding.pry
     start
   end
 
@@ -29,21 +30,26 @@ class WestminsterAuto::CLI
   end
 
   def print_vehicles(vehicle)
-    #figure out how to get index here
-    #puts "#{vehicle.index}"
-    puts "#{vehicle.year}"
-    puts "#{vehicle.make}"
-    puts "#{vehicle.model}"
-    puts "#{vehicle.mileage}"
-    puts "#{vehicle.price}"
+    WestminsterAuto::Vehicle.all.each_with_index do |vehicle, index|
+    puts "#{index}."
+    puts "#{vehicle.year} #{vehicle.make} #{vehicle.model}"
+    puts "Mileage: #{vehicle.mileage}"
+    puts "Price: #{vehicle.price}"
   end
 
-  def print_vehicle_details(from_input)
-    puts "#{vehicle.body}"
-    puts "#{vehicle.transmission}"
-    puts "#{vehicle.drive}"
-    puts "#{vehicle.fuel}"
-    puts "#{vehicle.engine}"
+  def print_vehicle_details(input)
+    WestminsterAuto::Vehicle.all[input.to_i-1]
+    puts "#{vehicle.year} #{vehicle.make} #{vehicle.model}"
+    puts "Mileage: #{vehicle.mileage}"
+    puts "Price: #{vehicle.price}"
+    puts ""
+    puts "Additional vehicle information:"
+    puts ""
+    puts "Body: #{vehicle.body}"
+    puts "Transmission: #{vehicle.transmission}"
+    puts "Drive: #{vehicle.drive}"
+    puts "Fuel: #{vehicle.fuel}"
+    puts "Engine: #{vehicle.engine}"
   end
-
+  
 end

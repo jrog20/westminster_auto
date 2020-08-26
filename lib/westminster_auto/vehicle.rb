@@ -1,6 +1,7 @@
 class WestminsterAuto::Vehicle
 
-  attr_accessor :year, :make, :model, :mileage, :price
+  attr_accessor 
+  attr_reader :year, :make, :model, :mileage, :price
 
   @@all = []
 
@@ -21,7 +22,6 @@ class WestminsterAuto::Vehicle
     @mileage = mileage
     @price = price
     @@all << self
-    #binding.pry
   end
 
   def self.all
