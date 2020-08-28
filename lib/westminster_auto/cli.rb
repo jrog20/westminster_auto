@@ -20,7 +20,7 @@ module WestminsterAuto
       
       if input > 0 && input <= WestminsterAuto::Vehicle.all.count
         vehicle = WestminsterAuto::Vehicle.find(input)
-        print_vehicle_details(vehicle)
+        print_vehicle_details(vehicle) 
       else
         puts ""
         puts "Please enter a valid number."
@@ -56,6 +56,8 @@ module WestminsterAuto
     end
 
     def print_vehicle_details(vehicle)
+      puts ""
+      puts "-----------Selected Vehicle-----------"
       puts ""
       puts "#{vehicle.year} #{vehicle.make} #{vehicle.model}"
       puts "Mileage: #{vehicle.mileage}"
