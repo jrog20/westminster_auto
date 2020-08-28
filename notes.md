@@ -12,9 +12,9 @@ Class = CLI
 - user is asked which vehicle they would like to see more information about
   - Ordered list using index
 - user enters a vehicle number and the additional information on that vehicle is provided
-  x- Body = the rest of the string (after year/make/model)
+  x- Body
   x- Transmission
   x- Drive
   x- Fuel
   x- Engine
-- user can get back to the main list by typing "main list"
+- user is asked if they would like to select another vehicle or exit
