@@ -16,7 +16,7 @@ module WestminsterAuto
         year = v[0]
         make = v[1]
         model = v[2]
-        body = v[3..10]
+        body = v[3..10].join(" ")
 
         price = row.css(".price .heading-font").children.text
 
@@ -26,7 +26,7 @@ module WestminsterAuto
         engine = row.css(".engine .value.h5").first.children.text.strip
         mileage = row.css(".mileage .value.h5").first.children.text.strip
         
-        WestminsterAuto::Vehicle.new(year, make, model, mileage, price)
+        WestminsterAuto::Vehicle.new(year, make, model, mileage, price, body, transmission, drive, fuel, engine)
       end
       
     end
