@@ -1,7 +1,3 @@
-require 'pry'
-require 'nokogiri'
-require 'open-uri'
-
 module WestminsterAuto
   class CLI
 
@@ -14,11 +10,14 @@ module WestminsterAuto
 
     def start
       print_vehicles
+      
       puts ""
-      puts "What number vehicle would you like to see more information on?"
+      puts "What number vehicle would you like to see more information on? If you are done viewing our inventory, please type 'quit'."
       input = gets.strip.to_i
       
-      if input > 0 && input <= WestminsterAuto::Vehicle.all.count
+      if input == 0
+        quit
+      elsif input > 0 && input <= WestminsterAuto::Vehicle.all.count
         vehicle = WestminsterAuto::Vehicle.find(input)
         print_vehicle_details(vehicle) 
       else
@@ -34,10 +33,7 @@ module WestminsterAuto
       if input == "y"
         start
       elsif input == "n"
-        puts ""
-        puts "Thank you for viewing our inventory. Have a great day!"
-        puts ""
-        exit
+        quit
       else
         puts ""
         puts "Let me show you our current inventory."
@@ -63,13 +59,20 @@ module WestminsterAuto
       puts "Mileage: #{vehicle.mileage}"
       puts "Price: #{vehicle.price}"
       puts ""
-      puts "Additional vehicle information:"
+      puts "---Additional vehicle information:---"
       puts ""
       puts "Body: #{vehicle.body}"
       puts "Transmission: #{vehicle.transmission}"
       puts "Drive: #{vehicle.drive}"
       puts "Fuel: #{vehicle.fuel}"
       puts "Engine: #{vehicle.engine}"
+    end
+
+    def quit
+      puts ""
+      puts "Thank you for viewing our inventory. Have a great day!"
+      puts ""
+      exit
     end
 
   end
