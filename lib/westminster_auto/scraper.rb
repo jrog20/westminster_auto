@@ -1,7 +1,3 @@
-# require 'pry'
-# require 'nokogiri'
-# require 'open-uri'
-
 module WestminsterAuto
   class Scraper
 
