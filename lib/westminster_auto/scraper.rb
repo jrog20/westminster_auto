@@ -1,6 +1,6 @@
-require 'pry'
-require 'nokogiri'
-require 'open-uri'
+# require 'pry'
+# require 'nokogiri'
+# require 'open-uri'
 
 module WestminsterAuto
   class Scraper
@@ -12,11 +12,11 @@ module WestminsterAuto
     def self.get_vehicles  
 
         self.get_page.css(".content").each do |row|
-        v = row.css(".title.heading-font .rmv_txt_drctn").first.children.text.strip.split(" ")
-        year = v[0]
-        make = v[1]
-        model = v[2]
-        body = v[3..10].join(" ")
+        vehicle_attribute = row.css(".title.heading-font .rmv_txt_drctn").first.children.text.strip.split(" ")
+        year = vehicle_attribute[0]
+        make = vehicle_attribute[1]
+        model = vehicle_attribute[2]
+        body = vehicle_attribute[3..10].join(" ")
 
         price = row.css(".price .heading-font").children.text
 
