@@ -12,7 +12,7 @@ module WestminsterAuto
       print_vehicles
       
       puts ""
-      puts "What number vehicle would you like to see more information on? If you are done viewing our inventory, please type 'quit'."
+      puts "What number vehicle would you like to see more information on? If you are done viewing our inventory, please type 'exit'."
       input = gets.strip.to_i
       
       if input == 0
@@ -42,7 +42,7 @@ module WestminsterAuto
     end
 
     def print_vehicles
-      WestminsterAuto::Vehicle.all.each_with_index do |vehicle, index|
+      WestminsterAuto::Vehicle.all.sort_by {|vehicle| vehicle.mileage.to_i}.each_with_index do |vehicle, index|
       puts ""
       puts "#{index + 1}."
       puts "#{vehicle.year} #{vehicle.make} #{vehicle.model}"
